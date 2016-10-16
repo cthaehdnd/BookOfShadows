@@ -1,0 +1,42 @@
+[
+	{
+		"name": "Example0",
+		"level": 0,
+		"school": "conjuration",
+		"ritual": 0,
+		"classes": ["a", "b", "c", "etc..."],
+		"spelltext": "foo bar"
+	},
+	{
+		"name": "Aaa",
+		"level": 0,
+		"school": "conjuration",
+		"ritual": 0,
+		"classes": ["a", "b", "c", "etc..."],
+		"spelltext": "foo bar"
+	},
+	{
+		"name": "Example1",
+		"level": 1,
+		"school": "conjuration",
+		"ritual": 0,
+		"classes": ["a", "b", "c", "etc..."],
+		"spelltext": "foo bar"
+	},
+	{
+		"name": "Example3",
+		"level": 3,
+		"school": "conjuration",
+		"ritual": 0,
+		"classes": ["a", "b", "c", "etc..."],
+		"spelltext": "foo bar"
+	},
+	{
+		"name": "Example4",
+		"level": 4,
+		"school": "conjuration",
+		"ritual": 0,
+		"classes": ["a", "b", "c", "etc..."],
+		"spelltext": "foo bar"
+	}
+]
