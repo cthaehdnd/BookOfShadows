@@ -75,6 +75,7 @@ var spellBinView = Backbone.View.extend({
 				//event.stopPropagation();
 				var val = $(this).val().toLowerCase();
 				$(".spell-title").addClass("filter-hidden"); //hide all
+				$( ".spell-title" ).removeClass("graybacked");
 				$(".level-header").addClass("filter-hidden");
 				$(".spell-title").filter( function(){
 					if (val==""){
@@ -98,10 +99,12 @@ var spellBinView = Backbone.View.extend({
 					});
 					return flag;
 				}).removeClass("filter-hidden").parent().removeClass("filter-hidden");
+				$( ".spell-title:visible:odd" ).addClass("graybacked");
 			}).on('keyup', function(event){
 				//event.stopPropagation();
 				$(this).change();
 			});
+			$( ".spell-title:visible:odd" ).addClass("graybacked");
 		});
 	},
 	render: function(){
