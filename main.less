@@ -7,6 +7,19 @@
 	margin-bottom: 10px;
 }
 
+.spell-school{
+	display: inline;
+	color: #a3a3a3;
+	margin-left: auto;
+}
+
+.spell-row{
+	display: flex;
+	flex-grow: 1;
+	width: 95%;
+	margin-left: 5%;
+}
+
 .header-bar{
 	@autoscale-width();
 	margin: auto;
@@ -48,8 +61,10 @@
 
 .spell-title{
 	margin: 5px;
-	margin-left: 50px;
 	font-size: 20px;
+	&:nth-of-type(odd){
+		background-color: #eeeeee;
+	}
 }
 
 .spell-name{
@@ -106,6 +121,7 @@ a{
 	&:hover{
 		text-decoration: underline;
 	}
+	flex-grow: 0;
 }
 
 @autoscale-width: {

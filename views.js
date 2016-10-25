@@ -84,7 +84,7 @@ var spellBinView = Backbone.View.extend({
 					var searchElements=val.split(" ");
 					flag=true;
 					nbegin=-1;
-					var name = $(this).data("title").replace(/\s/g,'').toLowerCase();
+					var name = $(this).data("title").toLowerCase();
 					_.each(searchElements, function(ele){
 						if(ele){
 							var place = name.indexOf(ele, nbegin);
