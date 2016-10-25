@@ -60,9 +60,11 @@ var spellBinView = Backbone.View.extend({
 				}
 			});
 			//enable search bar functionality
-			$(".filter-bar").on('change', function(event){
+			$(".filter-bar").on('input', function(event){
 				//event.stopPropagation();
+				console.log('bar');
 				var val = $(this).val().toLowerCase();
+				console.log(this.value);
 				$(".spell-title").addClass("filter-hidden"); //hide all
 				$( ".spell-title" ).removeClass("graybacked");
 				$(".level-header").addClass("filter-hidden");
@@ -89,10 +91,6 @@ var spellBinView = Backbone.View.extend({
 					return flag;
 				}).removeClass("filter-hidden").parent().removeClass("filter-hidden");
 				$( ".spell-title:visible:odd" ).addClass("graybacked");
-			}).on('keyup', function(event){
-				$(this).change();
-			}).on('onkeypress', function(event){
-				$(this).change();
 			});
 			$( ".spell-title:visible:odd" ).addClass("graybacked");
 		});
