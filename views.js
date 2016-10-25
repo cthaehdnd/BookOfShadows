@@ -1,4 +1,4 @@
-spellsource="spells.json"
+spellsource="spellList5e.json"
 
 var searchCardView = Backbone.View.extend({
 	initialize: function(){
@@ -44,6 +44,7 @@ var spellBinView = Backbone.View.extend({
 
 		//attach spells
 		$.getJSON(spellsource, function(json) {
+			console.log("boop 2: electric boopaloo");
 		    var levelMap={}; //needs changing
 		    _.each(json, function(spell){
 		    	if (!levelMap[spell.level]){
@@ -83,12 +84,12 @@ var spellBinView = Backbone.View.extend({
 			});
 			
 			//enable search bar functionality
-			$(".search-bar-input").on('change', function(event){
+			$(".filter-bar").on('change', function(event){
 				//event.stopPropagation();
-				$(".feat-header").next().slideUp();
+				console.log("boop");
 				var val = $(this).val().toLowerCase();
-				$(".feat").addClass("filter-hidden");
-				$(".feat").filter( function(){
+				$(".spell-title").addClass("filter-hidden"); //hide all
+				$(".spell-title").filter( function(){
 					if (val==""){
 						return true;
 					}
@@ -96,7 +97,7 @@ var spellBinView = Backbone.View.extend({
 					var searchElements=val.split(" ");
 					flag=true;
 					nbegin=-1;
-					var name = $(this).children(".feat-header").text().replace(/\s/g,'').toLowerCase();
+					var name = $(this).text().replace(/\s/g,'').toLowerCase();
 					_.each(searchElements, function(ele){
 						if(ele){
 							var place = name.indexOf(ele, nbegin);
