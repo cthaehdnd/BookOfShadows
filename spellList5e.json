@@ -384,7 +384,7 @@
 	{
 		"name": "Blade Ward",
 		"level": 0,
-		"schoo": "Abjuration",
+		"school": "Abjuration",
 		"ritual": 0,
 		"casting_time": "1 action",
 		"range": "self",
@@ -885,7 +885,7 @@
 		"spelltext": "A flame, equivalent in brightness to a torch, springs forth from an object that you touch. The effect looks like a regular flame, but it creates no heat and doesn’t use oxygen. A continual flame can be covered or hidden but not smothered or quenched."
 	},
 	{
-		"Name": "Control Water",
+		"name": "Control Water",
 		"level": 4,
 		"school": "Transmutation",
 		"ritual": 0,
