@@ -64,7 +64,11 @@ var spellTemplate = _.template(`
 var spellDescriptionTemplate = _.template(`
 	<div class="spell-content">
 		<div class="spell-name"><%= name %></div>
-		<div class="spell-ele"><b>Classes: </b> <%= classes %> </div>
+		<div class="spell-ele"><b>Classes: </b>
+			<% _.each(classes, function(ele){ %>
+				<%= ele %> 
+			<% }); %>
+		</div>
 		<div class="spell-ele"><b>Level: </b><%= level %></div>
 		<div class="spell-ele"> <b>School: </b> <%= school %> </div>
 		<div class="spell-ele"> <b>Casting Time: </b><%= casting_time %><% if(ritual==1){%>, ritual<%}%></div>

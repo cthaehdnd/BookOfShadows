@@ -53,6 +53,7 @@ var spellBinView = Backbone.View.extend({
 			if (hash!="All"){
 				//this is weird, fix later
 				$(".spell-title").addClass("class-hidden");
+				$(".level-header").addClass("class-hidden");
 				$(".spell-title").filter( function(){
 					var attribute = $(this).data("attribute");
 					return attribute.indexOf(hash) != -1;
