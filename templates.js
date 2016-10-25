@@ -29,14 +29,14 @@ var backwardsTemplate = _.template(`
 	<div class="class-filter">
 		<a class="title" href=/#All>Book Of Shadow</a>
 		<div class="class-selector">
-			<a class="attribute-selector" href=../#Bard>Bard</a>
-			<a class="attribute-selector" href=../#Cleric>Cleric</a>
-			<a class="attribute-selector" href=../#Druid>Druid</a>
-			<a class="attribute-selector" href=../#Paladin>Paladin</a>
-			<a class="attribute-selector" href=../#Ranger>Ranger</a>
-			<a class="attribute-selector" href=../#Sorcerer>Sorcerer</a>
-			<a class="attribute-selector" href=../#Warlock>Warlock</a>
-			<a class="attribute-selector" href=../#Wizard>Wizard</a>
+			<a class="attribute-selector" href=.#Bard>Bard</a>
+			<a class="attribute-selector" href=.#Cleric>Cleric</a>
+			<a class="attribute-selector" href=.#Druid>Druid</a>
+			<a class="attribute-selector" href=.#Paladin>Paladin</a>
+			<a class="attribute-selector" href=.#Ranger>Ranger</a>
+			<a class="attribute-selector" href=.#Sorcerer>Sorcerer</a>
+			<a class="attribute-selector" href=.#Warlock>Warlock</a>
+			<a class="attribute-selector" href=.#Wizard>Wizard</a>
 			<div class="filler"></div>
 			<div class="filler"></div>
 			<div class="filler"></div>
