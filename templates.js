@@ -22,6 +22,7 @@ var searchCardTemplate = _.template(`
 		</div>
 	</div>
 	<input type="text" class="filter-bar" placeholder="Spell name"></input>
+	<div class="line"></div>
 `);
 
 var backwardsTemplate = _.template(`
@@ -66,9 +67,7 @@ var spellDescriptionTemplate = _.template(`
 		<div class="spell-ele"><b>Classes: </b> <%= classes %> </div>
 		<div class="spell-ele"><b>Level: </b><%= level %></div>
 		<div class="spell-ele"> <b>School: </b> <%= school %> </div>
-		<div class="spell-ele"> <b>Casting Time: </b><%= casting_time %><% if(ritual==1){%>, ritual<%}%>
-		</div>
-		<div class="spell-ele"> <b></b> </div>
-		<div class="spell-ele"> <b></b> </div>
+		<div class="spell-ele"> <b>Casting Time: </b><%= casting_time %><% if(ritual==1){%>, ritual<%}%></div>
+		<div class="spell-desc"> <%= spelltext %> </div>
 	</div>
 `);

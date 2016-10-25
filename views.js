@@ -9,7 +9,7 @@ var searchCardView = Backbone.View.extend({
 		//resize handler
 		$(window).resize( function(){
 			//enforce header size bounds even if we resize
-			var width=Math.max(Math.min(1200,Math.floor((window.innerWidth*.9)/150)*150),200);
+			var width=Math.max(Math.min(1200,Math.floor((window.innerWidth*.75)/150)*150),200);
 			if (width > 900){
 				if (width < 1200){
 					width=900;
@@ -33,7 +33,7 @@ var spellBinView = Backbone.View.extend({
 		//resize handler
 		$(window).resize( function(){
 			//enforce header size bounds even if we resize
-			var width=Math.max(Math.min(1200,Math.floor((window.innerWidth*.9)/150)*150),200);
+			var width=Math.max(Math.min(1200,Math.floor((window.innerWidth*.75)/150)*150),200);
 			if (width > 900){
 				if (width < 1200){
 					width=900;
@@ -134,7 +134,7 @@ var spellDescription = Backbone.View.extend({
 		//resize handler, is attached to more or less every container element
 		$(window).resize( function(){
 			//enforce header size bounds even if we resize
-			var width=Math.max(Math.min(1200,Math.floor((window.innerWidth*.9)/150)*150),200);
+			var width=Math.max(Math.min(1200,Math.floor((window.innerWidth*.75)/150)*150),200);
 			if (width > 900){
 				if (width < 1200){
 					width=900;
