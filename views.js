@@ -24,25 +24,15 @@ var spellBinView = Backbone.View.extend({
 	initialize: function(){
 		this.render();
 	},
-	render: function(){
+	attachSpells: function(){
+		//remove prev spells
+		$(".spell-bin").children().remove();
+		$(".filter-bar").off();
+		//attach spells
 		var hash = window.location.hash.substring(1);
 		if (hash==""){
 			hash="All";
 		}
-
-		//resize handler
-		$(window).resize( function(){
-			//enforce header size bounds even if we resize
-			var width=Math.max(Math.min(1200,Math.floor((window.innerWidth*.75)/150)*150),200);
-			if (width > 900){
-				if (width < 1200){
-					width=900;
-				}
-			}
-			$(".spell-bin").css("width", width);
-		});
-
-		//attach spells
 		$.getJSON(spellsource, function(json) {
 		    var levelMap={};
 		    _.each(json, function(spell){
@@ -66,12 +56,11 @@ var spellBinView = Backbone.View.extend({
 				$(".spell-title").filter( function(){
 					var attribute = $(this).data("attribute");
 					return attribute.indexOf(hash) != -1;
-				}).removeClass("type-hidden").parent().removeClass("type-hidden");
+				}).removeClass("class-hidden").parent().removeClass("class-hidden");
 			}
 			else{
 				$(".spell").removeClass("type-hidden");
 			}
-
 			//enable card hide/show
 			$(".spell").click(function(event){
 				//event.stopPropagation();
@@ -80,7 +69,6 @@ var spellBinView = Backbone.View.extend({
 					$(this).children(".accordion-main").slideDown();
 				}
 			});
-			
 			//enable search bar functionality
 			$(".filter-bar").on('change', function(event){
 				//event.stopPropagation();
@@ -113,8 +101,22 @@ var spellBinView = Backbone.View.extend({
 				//event.stopPropagation();
 				$(this).change();
 			});
-
 		});
+	},
+	render: function(){
+		//resize handler
+		$(window).resize( function(){
+			//enforce header size bounds even if we resize
+			var width=Math.max(Math.min(1200,Math.floor((window.innerWidth*.75)/150)*150),200);
+			if (width > 900){
+				if (width < 1200){
+					width=900;
+				}
+			}
+			$(".spell-bin").css("width", width);
+		});
+		this.attachSpells();
+		window.onhashchange = this.attachSpells;
 	}
 });
 
