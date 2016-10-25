@@ -44,7 +44,6 @@ var spellBinView = Backbone.View.extend({
 
 		//attach spells
 		$.getJSON(spellsource, function(json) {
-			console.log("boop 2: electric boopaloo");
 		    var levelMap={}; //needs changing
 		    _.each(json, function(spell){
 		    	if (!levelMap[spell.level]){
