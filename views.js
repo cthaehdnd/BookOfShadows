@@ -90,7 +90,8 @@ var spellBinView = Backbone.View.extend({
 				}).removeClass("filter-hidden").parent().removeClass("filter-hidden");
 				$( ".spell-title:visible:odd" ).addClass("graybacked");
 			}).on('keyup', function(event){
-				//event.stopPropagation();
+				$(this).change();
+			}).on('onkeypress', function(event){
 				$(this).change();
 			});
 			$( ".spell-title:visible:odd" ).addClass("graybacked");
