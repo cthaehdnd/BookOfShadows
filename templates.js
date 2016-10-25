@@ -51,7 +51,8 @@ var backwardsTemplate = _.template(`
 `);
 
 var levelTemplate = _.template(`
-	<div class="level-header" value="<%= rank%>">Level <%= rank%>:</div>
+	<div class="level-header" value="<%= rank%>">
+		<% if(rank==0){%>Cantrips:<%} else{ %> Level <%= rank%>: <% } %>
 	</div>
 `);
 
