@@ -1,17 +1,53 @@
+.spell-content{
+	font-family: "calluna", sans-seriff;
+}
+
+.spell-ele{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
 .header-bar{
 	@autoscale-width();
 	margin: auto;
 }
 
+.filter-hidden{
+	display: none;
+}
+
+.spell-description{
+	@autoscale-width();
+	margin: auto;
+	font-size: 18px;
+}
+
+.spell-desc{
+	line-height: 25px;
+	text-indent: 50px;
+}
+
+.line{
+	width: 100%;
+	border-bottom: solid 1px #000000;
+	margin-bottom: 25px;
+}
+
 .spell-bin{
 	@autoscale-width();
-	border-top: solid 1px #000000;
 	margin: auto;
 	margin-top: 25px;
 }
 
-.accordion-main{
+.spell-title{
+	margin: 5px;
 	margin-left: 50px;
+	font-size: 20px;
+}
+
+.spell-name{
+	font-size: 24px;
+	font-weight: 700;
 }
 
 .level-header{
@@ -38,14 +74,15 @@
 
 .title{
 	display: block;
-	flex-grow: 2;
+	flex-grow: 0;
 	width: 200px;
 	margin: 1%;
+	font-weight: 800;
+	font-size: 20px;
 }
 
 .attribute-selector{
-	flex-grow: 1;
-	width: 100px;
+	min-width: 125px;
 }
 
 .class-selector{
@@ -53,7 +90,6 @@
 	direction: row;
 	flex-grow: 1;
 	flex-wrap: wrap;
-	width: 100%;
 	margin: 1%;
 }
 

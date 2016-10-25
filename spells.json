@@ -4,15 +4,16 @@
 		"level": 0,
 		"school": "conjuration",
 		"ritual": 0,
-		"classes": ["a", "b", "c", "etc..."],
+		"classes": ["Sorcerer", "Bard", "Wizard", "etc..."],
 		"spelltext": "foo bar"
 	},
 	{
 		"name": "Aaa",
 		"level": 0,
 		"school": "conjuration",
-		"ritual": 0,
-		"classes": ["a", "b", "c", "etc..."],
+		"ritual": 1,
+		"classes": ["Sorcer", "Bard", "Wizard", "etc..."],
+		"casting_time": "1 minute",
 		"spelltext": "foo bar"
 	},
 	{
