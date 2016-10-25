@@ -58,7 +58,7 @@ var levelTemplate = _.template(`
 var spellTemplate = _.template(`
 	<div class="spell-title" data-attribute="<%= classes %>" data-title="<%= level %>|<%= name %>">
 		<div class="spell-row">
-			<a href="spells.html#<%= name %>"> <%= name %> </a>
+			<a href="spells.html#<%= name %>"> <%= name %> <% if(ritual==1){%>[r]<%}%></a>
 			<div class="spell-school"> <%= school %> </div>
 		</div>
 	</div>
@@ -69,7 +69,7 @@ var spellDescriptionTemplate = _.template(`
 		<div class="spell-name"><%= name %></div>
 		<div class="spell-ele"><b>Classes: </b>
 			<% _.each(classes, function(ele){ %>
-				<%= ele %> 
+				<a href=".#<%= ele %>"><%= ele %> </a>
 			<% }); %>
 		</div>
 		<div class="spell-ele"><b>Level: </b><%= level %></div>
