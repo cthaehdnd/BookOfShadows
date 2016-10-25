@@ -49,7 +49,6 @@ var spellBinView = Backbone.View.extend({
 		    	if (!levelMap[spell.level]){
 		    		levelMap[spell.level]=[];
 		    	}
-		    	console.log(spell);
 		    	levelMap[spell.level].push(spell);
 		    });
 		    _.each(Object.keys(levelMap), function(key){
