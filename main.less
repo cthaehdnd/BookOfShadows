@@ -22,7 +22,7 @@
 }
 
 .header-bar{
-	@autoscale-width();
+	width: 70%;
 	margin: auto;
 }
 
@@ -38,7 +38,7 @@
 }
 
 .spell-description{
-	@autoscale-width();
+	width: 70%;
 	margin: auto;
 	font-size: 18px;
 }
@@ -55,7 +55,7 @@
 }
 
 .spell-bin{
-	@autoscale-width();
+	width: 70%;
 	margin: auto;
 	margin-top: 25px;
 }
@@ -132,7 +132,3 @@ a{
 	}
 	flex-grow: 0;
 }
-
-@autoscale-width: {
-	width: `Math.max(Math.min(1200,Math.floor((window.innerWidth*.75)/150)*150),300)`;
-};
