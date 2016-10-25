@@ -3,6 +3,16 @@
 	margin: auto;
 }
 
+.spell-description{
+	@autoscale-width();
+	margin: auto;
+}
+
+.line{
+	width: 100%;
+	border-bottom: solid 1px #000000
+}
+
 .spell-bin{
 	@autoscale-width();
 	border-top: solid 1px #000000;
@@ -10,8 +20,11 @@
 	margin-top: 25px;
 }
 
-.accordion-main{
+.spell-title{
 	margin-left: 50px;
+}
+
+.spell-name{
 }
 
 .level-header{
@@ -38,14 +51,16 @@
 
 .title{
 	display: block;
-	flex-grow: 2;
+	flex-grow: 0;
 	width: 200px;
 	margin: 1%;
+	border-bottom: 50px;
+	font-weight: 800;
+	font-size: 20px;
 }
 
 .attribute-selector{
-	flex-grow: 1;
-	width: 100px;
+	min-width: 125px;
 }
 
 .class-selector{
@@ -53,7 +68,6 @@
 	direction: row;
 	flex-grow: 1;
 	flex-wrap: wrap;
-	width: 100%;
 	margin: 1%;
 }
 
