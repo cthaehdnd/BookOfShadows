@@ -44,11 +44,12 @@ var spellBinView = Backbone.View.extend({
 
 		//attach spells
 		$.getJSON(spellsource, function(json) {
-		    var levelMap={}; //needs changing
+		    var levelMap={};
 		    _.each(json, function(spell){
 		    	if (!levelMap[spell.level]){
 		    		levelMap[spell.level]=[];
 		    	}
+		    	console.log(spell);
 		    	levelMap[spell.level].push(spell);
 		    });
 		    _.each(Object.keys(levelMap), function(key){
@@ -60,14 +61,14 @@ var spellBinView = Backbone.View.extend({
 		    		$("[value="+key+"]").append(spellTemplate(ele));
 		    	});
 		    });
-		 	//hide feats accordingly
+		 	//hide feats accordingly to class view
 			if (hash!="All"){
 				//this is weird, fix later
-				$(".spell").addClass("type-hidden");
-				$(".spell").filter( function(){
+				$(".spell-title").addClass("class-hidden");
+				$(".spell-title").filter( function(){
 					var attribute = $(this).data("attribute");
-					return attribute == hash;
-				}).removeClass("type-hidden");
+					return attribute.indexOf(hash) != -1;
+				}).removeClass("type-hidden").parent().removeClass("type-hidden");
 			}
 			else{
 				$(".spell").removeClass("type-hidden");
@@ -88,6 +89,7 @@ var spellBinView = Backbone.View.extend({
 				console.log("boop");
 				var val = $(this).val().toLowerCase();
 				$(".spell-title").addClass("filter-hidden"); //hide all
+				$(".level-header").addClass("filter-hidden");
 				$(".spell-title").filter( function(){
 					if (val==""){
 						return true;
@@ -109,7 +111,7 @@ var spellBinView = Backbone.View.extend({
 						}
 					});
 					return flag;
-				}).removeClass("filter-hidden");
+				}).removeClass("filter-hidden").parent().removeClass("filter-hidden");
 			}).on('keyup', function(event){
 				//event.stopPropagation();
 				$(this).change();

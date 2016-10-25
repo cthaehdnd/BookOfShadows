@@ -27,7 +27,7 @@ var searchCardTemplate = _.template(`
 
 var backwardsTemplate = _.template(`
 	<div class="class-filter">
-		<a class="title" href=/#All>Book Of Shadow</a>
+		<a class="title" href=.#All>Book Of Shadow</a>
 		<div class="class-selector">
 			<a class="attribute-selector" href=.#Bard>Bard</a>
 			<a class="attribute-selector" href=.#Cleric>Cleric</a>
@@ -56,7 +56,7 @@ var levelTemplate = _.template(`
 `);
 
 var spellTemplate = _.template(`
-	<div class="spell-title">
+	<div class="spell-title" data-attribute="<%= classes %>">
 		<a href="spells.html#<%= name %>"> <%= name %> </a>
 	</div>
 `);
