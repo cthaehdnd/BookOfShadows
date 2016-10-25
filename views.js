@@ -49,7 +49,6 @@ var spellBinView = Backbone.View.extend({
 		    	if (!levelMap[spell.level]){
 		    		levelMap[spell.level]=[];
 		    	}
-		    	console.log(spell);
 		    	levelMap[spell.level].push(spell);
 		    });
 		    _.each(Object.keys(levelMap), function(key){
@@ -57,7 +56,6 @@ var spellBinView = Backbone.View.extend({
 		    	_.each(levelMap[key].sort(function(a, b) {
 					return a.name.localeCompare(b.name);
 				}), function(ele){
-		    		console.log(ele);
 		    		$("[value="+key+"]").append(spellTemplate(ele));
 		    	});
 		    });
@@ -86,7 +84,6 @@ var spellBinView = Backbone.View.extend({
 			//enable search bar functionality
 			$(".filter-bar").on('change', function(event){
 				//event.stopPropagation();
-				console.log("boop");
 				var val = $(this).val().toLowerCase();
 				$(".spell-title").addClass("filter-hidden"); //hide all
 				$(".level-header").addClass("filter-hidden");
@@ -130,8 +127,6 @@ var spellDescription = Backbone.View.extend({
 		if (hash==""){
 			hash="?";
 		}
-		console.log($(this));
-		console.log(hash);
 		//resize handler, is attached to more or less every container element
 		$(window).resize( function(){
 			//enforce header size bounds even if we resize
@@ -148,7 +143,6 @@ var spellDescription = Backbone.View.extend({
 		//find the fucking spell
 		$.getJSON(spellsource, function(json) {
 			_.each(json, function(spell){
-				console.log(spell);
 		    	if (spell.name==hash){
 		    		$(".spell-description").append(spellDescriptionTemplate(spell))
 		    	}

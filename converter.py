@@ -20,21 +20,22 @@ while True:
 	name=line.rsplit("(")[0]
 	classes=line.rsplit("(")[1][:-1]
 	classDict[name]=classes
-
+print(classDict)
+print(lookup)
 name=""
 while True:
 	line=infile.readline()
 	if line=="":
 		break
-	if line[0:7]=="\t\"name\"":
+	if line.strip()[0:6]=="\"name\"":
 		name=line.rsplit(":")[1][2:-3]
-	if line[0:10]=="\t\"classes\"":
-		string="\t\"classes\": ["
+	if line.strip()[0:9]=="\"classes\"":
+		string="\t\t\"classes\": ["
 		classes=classDict[name].replace(" ","").rsplit(',')
 		for c in classes:
 			string+="\""+lookup[c]+"\","
 		string=string[0:-1]
 		string+="],"
-		print(string,file=outfile, end="")
+		print(string,file=outfile)
 	else:
 		print(line,file=outfile, end="")
