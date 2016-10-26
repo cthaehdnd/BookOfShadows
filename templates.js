@@ -21,7 +21,7 @@ var searchCardTemplate = _.template(`
 			<div class="filler"></div>
 		</div>
 	</div>
-	<input type="text" class="filter-bar" placeholder="Search"></input>
+	<input type="text" class="filter-bar" placeholder="Search (Format: Level:X|name)"></input>
 	<div class="line"></div>
 `);
 
@@ -57,7 +57,7 @@ var levelTemplate = _.template(`
 `);
 
 var spellTemplate = _.template(`
-	<div class="spell-title" data-attribute="<%= classes %>" data-title="<%= level %>|<%= name %>">
+	<div class="spell-title" data-attribute="<%= classes %>" data-title="level:<%= level %>|<%= name %>">
 		<div class="spell-row">
 			<a href="spells.html#<%= name %>"> <%= name %> <% if(ritual==1){%>[r]<%}%></a>
 			<div class="spell-school"> <%= school %> </div>
