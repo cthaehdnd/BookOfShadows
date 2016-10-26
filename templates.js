@@ -21,7 +21,7 @@ var searchCardTemplate = _.template(`
 			<div class="filler"></div>
 		</div>
 	</div>
-	<input type="text" class="filter-bar" placeholder="Search (Format: Level:X|name)"></input>
+	<input type="text" class="filter-bar" placeholder='"Level: X" or "Spellname"'></input>
 	<div class="line"></div>
 `);
 
