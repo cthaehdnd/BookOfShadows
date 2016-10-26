@@ -69,8 +69,8 @@ var spellDescriptionTemplate = _.template(`
 	<div class="spell-content">
 		<div class="spell-name"><%= name %></div>
 		<div class="spell-ele"><b>Classes: </b>
-			<% _.each(classes, function(ele){ %>
-				<a href=".#<%= ele %>"><%= ele %> </a>
+			<% _.each(classes, function(ele, index){ %>
+				<a href=".#<%= ele %>"><%= ele %></a><% if(index!=classes.length-1){%>, <%}%>
 			<% }); %>
 		</div>
 		<div class="spell-ele"><b>Level: </b><%= level %></div>
