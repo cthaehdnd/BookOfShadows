@@ -110,7 +110,7 @@ var spellDescription = Backbone.View.extend({
 		if (hash==""){
 			hash="?";
 		}
-
+		hash = hash.replace(/_/g, ' ');
 		$(".spell-description").append(backwardsTemplate({}));
 		//find the fucking spell
 		$.getJSON(spellsource, function(json) {
