@@ -1,4 +1,4 @@
-spellsource="foobar"
+spellsource="testspell.json"
 
 var searchCardView = Backbone.View.extend({
 	initialize: function(){
