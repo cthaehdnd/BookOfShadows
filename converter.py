@@ -1,12 +1,13 @@
 from __future__ import print_function
 import sys
+import json
+import re
 
 
 
 infile=open(sys.argv[1], 'r')
 sourcefile=sys.argv[2]=open(sys.argv[2], 'r')
 outfile=sys.argv[3]=open(sys.argv[3], 'w+')
-
 
 lookup={"BAR":"Bard", "SOR":"Sorcerer", "DRU":"Druid","WIZ":"Wizard","RAN":"Ranger","CLE":"Cleric","PAL":"Paladin","WAR":"Warlock"}
 
@@ -18,24 +19,23 @@ while True:
 		break
 	line=line.strip()
 	name=line.rsplit("(")[0]
-	classes=line.rsplit("(")[1][:-1]
-	classDict[name]=classes
+	classes=line.rsplit("(")[1][:-1].rsplit(',')
+	classDict[name]=[]
+	for c in classes:
+		classDict[name].append(lookup[c.strip()])
 print(classDict)
 print(lookup)
-name=""
-while True:
-	line=infile.readline()
-	if line=="":
-		break
-	if line.strip()[0:6]=="\"name\"":
-		name=line.rsplit(":")[1][2:-3]
-	if line.strip()[0:9]=="\"classes\"":
-		string="\t\t\"classes\": ["
-		classes=classDict[name].replace(" ","").rsplit(',')
-		for c in classes:
-			string+="\""+lookup[c]+"\","
-		string=string[0:-1]
-		string+="],"
-		print(string,file=outfile)
+
+spelldata=json.load(infile)
+pattern=re.compile(r'<.*?>')
+for spell in spelldata:
+	spell['classes']=classDict[spell['name']]
+	if pattern.sub('', spell['level'])=='Cantrip':
+		spell['level']=0
 	else:
-		print(line,file=outfile, end="")
+		spell['level']=int(pattern.sub('', spell['level']))
+	pattern2=re.compile(r'^.*br/>')
+	spell['spelltext']=pattern2.sub('', spell['spelltext'])
+
+print(spelldata)
+json.dump(spelldata, outfile)
